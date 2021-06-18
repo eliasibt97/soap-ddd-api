@@ -10,10 +10,10 @@ class DBConfig extends PDO {
 
     public function __construct(){
 
-        if(is_null($this->db_connect)){
-            $this->db_connect = new PDO('mysql:host='.$this->db_host.';dbname='.$this->db_name,
+        if(is_null($this->connection)){
+            $this->connection = new PDO('mysql:host='.$this->db_host.';dbname='.$this->db_name,
                                          $this->db_user, $this->db_pass);
         }
-        return $this->db_connect;
+        return $this->connection;
     }
 }
